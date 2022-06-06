@@ -35,6 +35,7 @@ def takeCommand():
     with sr.Microphone() as source:
         print("Listening.....")
         r.pause_threshold = 1
+        r.energy_threshold=4000
         audio = r.listen(source)
 
     try:
@@ -71,7 +72,7 @@ if __name__ == "__main__":
             webbrowser.open("google.com")
         elif 'open stackoverflow' in query:
             webbrowser.open("stackoverflow.com")
-        elif 'open shri sai polytechnic' in query:
+        elif 'open shri sai polytechnic website' in query:
             webbrowser.open("https://www.saipoly.ac.in")
 
         elif 'play music' in query:
@@ -87,18 +88,21 @@ if __name__ == "__main__":
             codePath = "C:\\Users\\Payal\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
         elif 'open powerpoint' in query:
-            codePath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\PowerPoint 2013"
+            codePath = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
             os.startfile(codePath)
-        elif 'open word' in query:
-            codePath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Word 2013"
+        elif 'open microsoft word' in query:
+            codePath = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
             os.startfile(codePath)
-        elif 'open outlook' in query:
-            codePath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Outlook 2013"
+        elif 'open micro outlook' in query:
+            codePath = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"
             os.startfile(codePath)
         elif 'open excel' in query:
-            codePath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Excel 2013"
+            codePath = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.EXE "
             os.startfile(codePath)
         elif 'what is your name' in query:
             speak("jarvis")
-
-        # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        elif 'your father name' in query:
+            speak("dj")
+        elif 'make me blush' in query:
+            speak("on the scale of 1 to 10  I will give you an 11")
+            # See PyCharm help at https://www.jetbrains.com/help/pycharm/
